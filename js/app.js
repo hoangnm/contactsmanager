@@ -18,6 +18,10 @@
         .when('/contact-new', {
             templateUrl: './js/templates/new.html',
             controller: 'newContactCtrl',
+        })
+        .when('/contact-edit/:id', {
+            templateUrl: './js/templates/edit.html',
+            controller: 'editContactCtrl',
         });
     }]);
 })();

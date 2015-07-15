@@ -60,11 +60,22 @@
       return defer.promise;
     }
     
+    function update(data) {
+      var defer = $q.defer();
+      db.update({_id: data._id}, data, function(err, numReplaced) {
+        if(!err) {
+          defer.resolve(numReplaced);
+        }
+        defer.reject(err);
+      });
+      return defer.promise;
+    }
     return {
       find: find,
       findById: findById,
       save: save,
-      remove: remove
+      remove: remove,
+      update: update
     };
   }]);
 })();
