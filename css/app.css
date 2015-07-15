@@ -12,6 +12,12 @@
 
 .header .title {
   float: left;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.header .menu {
+  float: right;
 }
 
 .content {
