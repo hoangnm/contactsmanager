@@ -2,8 +2,8 @@
   var Datastore = require('nedb');
 
   angular.module('app')
-  .factory('customerDB', ['$q', function($q) {
-    var db = new Datastore('./db/customers.db');
+  .factory('contactDB', ['$q', function($q) {
+    var db = new Datastore('./db/contacts.db');
     db.loadDatabase();
     
     function find(name, key) {

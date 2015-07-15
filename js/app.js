@@ -11,13 +11,13 @@
             templateUrl: './js/templates/home.html',
             controller: 'homeCtrl',
         })
-        .when('/customer/:id', {
-            templateUrl: './js/templates/customer.html',
-            controller: 'customerCtrl',
+        .when('/contact/:id', {
+            templateUrl: './js/templates/contact.html',
+            controller: 'contactCtrl',
         })
-        .when('/customer-new', {
+        .when('/contact-new', {
             templateUrl: './js/templates/new.html',
-            controller: 'newCustomerCtrl',
+            controller: 'newContactCtrl',
         });
     }]);
 })();

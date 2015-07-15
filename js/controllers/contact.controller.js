@@ -1,29 +1,29 @@
 (function() {
     angular.module('app')
-    .controller('customerCtrl', ['$scope', 'customerDB', '$routeParams', 
-        function($scope, customerDB, $routeParams) {
+    .controller('contactCtrl', ['$scope', 'contactDB', '$routeParams', 
+        function($scope, contactDB, $routeParams) {
         var id = $routeParams.id;
         $scope.removeCustomer = removeCustomer;
         getCustomer();
         function getCustomer() {
-            customerDB.findById(id)
+            contactDB.findById(id)
             .then(function(res) {
                 $scope.customer = res;
             });
         }
         function removeCustomer() {
-            customerDB.remove(id)
+            contactDB.remove(id)
             .then(function(res) {
                 alert('Xóa thành công!');
                 $scope.go('/');
             });
         }
     }])
-    .controller('newCustomerCtrl', ['$scope', 'customerDB', function($scope, customerDB) {
+    .controller('newContactCtrl', ['$scope', 'contactDB', function($scope, contactDB) {
         $scope.data = {};
         $scope.onSubmit = function(form) {
             if(form.$valid) {
-                customerDB.save($scope.data)
+                contactDB.save($scope.data)
                 .then(function() {
                     alert('Lưu thành công!');
                     $scope.data = {};
