@@ -1,0 +1,19 @@
+/* utilities */
+.center {
+  text-align: center;
+}
+
+
+/* app */
+.header {
+  height: 40px;
+  border-bottom: solid 1px;
+}
+
+.header .title {
+  float: left;
+}
+
+.content {
+  margin-top: 20px;
+}
