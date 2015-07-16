@@ -29,6 +29,10 @@
               }
             });
           });
+
+          scope.$on('file:reset', function() {
+            //element.replaceWith(element.val('').clone(true));
+          });
         }
       };
     }

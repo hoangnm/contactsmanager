@@ -5,7 +5,7 @@
       $scope.importExcel = function () {
         var path = $scope.data.fileModel.path;
         excelService.importToDB(path);
-        $scope.data.fileModel = null;
+        $scope.$broadcast('file:reset');
       };
     }]);
 })();
