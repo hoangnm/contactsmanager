@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "index.html",
   "dependencies": {
-    "nedb": "^1.1.2"
+    "nedb": "^1.1.2",
+    "xlsx": "^0.8.0"
   }
 }

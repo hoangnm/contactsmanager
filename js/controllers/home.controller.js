@@ -1,6 +1,7 @@
 (function() {
   angular.module('app')
-    .controller('homeCtrl', ['$scope', 'contactDB', function($scope, contactDB) {
+    .controller('homeCtrl', ['$scope', 'contactDB', 
+      function($scope, contactDB) {
       var getDataDone = false;
       $scope.data = {filterKey: 'name', filterValue: null};
       $scope.customers = [];
