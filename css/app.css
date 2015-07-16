@@ -1,18 +1,33 @@
+/* reset */
+body {
+  margin: 0;
+}
+
+/* common */
+body {
+  webkit-font-smoothing: antialiased;
+}
+
+
 /* utilities */
 .center {
   text-align: center;
 }
 
 
-/* app */
+/* header */
 .header {
-  height: 40px;
-  border-bottom: solid 1px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #106CC8;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+  color: #D9E8F1;
+  padding: 0 10px;
 }
 
 .header .title {
   float: left;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 25px;
 }
 
@@ -20,6 +35,17 @@
   float: right;
 }
 
+.header .icon {
+  font-size: 25px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.header a:hover {
+  color: #fff;
+}
+
+/* content */
 .content {
   margin-top: 20px;
 }
