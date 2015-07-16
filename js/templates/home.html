@@ -1,6 +1,6 @@
 <div class="search-bar center">
   <input type="text" placeholder="Tìm kiếm" ng-model="data.filterValue">
-  <button ng-click="filter(data.filterValue, data.filterKey)">Tìm kiếm</button>
+  <button class="raised" ng-click="filter(data.filterValue, data.filterKey)">Tìm kiếm</button>
   <div style="display:inline;">
     <label>Tìm theo: </label>
     <select ng-model="data.filterKey">
