@@ -1,5 +1,5 @@
 (function() {
-    angular.module('app', ['ngRoute'])
+    angular.module('app', ['ngRoute', 'file-model'])
     .run(['$rootScope', '$location', function($rootScope, $location) {
       $rootScope.go = function(url) {
         $location.url(url);
