@@ -4,3 +4,12 @@
 </div> -->
 <div file-upload></div>
 <button ng-click="importExcel()" ng-disabled="!canImport">Import</button>
+<form novalidate name="mainForm">
+  <div ng-form name="childForm1">
+    <input type="text" placeholder="Họ và tên" ng-model="data.name" required>
+    <input type="text" placeholder="Địa chỉ" ng-model="data.address">
+    <input type="text" placeholder="Số điện thoại" ng-model="data.phoneNum" required>
+    <input type="email" placeholder="Email" ng-model="data.email">
+  </div>
+  <button type="submit">Lưu</button>
+</form>
