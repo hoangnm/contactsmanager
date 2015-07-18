@@ -1,5 +1,30 @@
 (function() {
     angular.module('app')
+    .controller('contactsCtrl', ['$scope', 'contactDB', '$stateParams', 
+        function($scope, contactDB, $stateParams) {
+        var searchKey = $stateParams.key;
+        var searchValue = $stateParams.value;
+        var getDataDone = false;
+        $scope.customers = [];
+
+        $scope.onItemClick = function(customer) {
+            $scope.go('contact-show', {id: customer._id});
+        };
+        $scope.isEmpty = function() {
+            return getDataDone && $scope.customers.length === 0;
+        };
+
+        getContacts();
+        
+        function getContacts() {
+            contactDB.find(searchValue, searchKey)
+            .then(function(res) {
+                $scope.customers = res;
+                getDataDone = true;
+            });
+        }
+        
+    }])
     .controller('contactCtrl', ['$scope', 'contactDB', '$stateParams', 
         function($scope, contactDB, $stateParams) {
         var id = $stateParams.id;
@@ -20,7 +45,7 @@
             contactDB.remove(id)
             .then(function(res) {
                 alert('Xóa thành công!');
-                $scope.go('home');
+                $scope.back();
             });
         }
         
@@ -28,27 +53,12 @@
             $scope.go('contact-edit', {id: id});
         }
     }])
-    .controller('newContactCtrl', ['$scope', 'contactDB', function($scope, contactDB) {
-        $scope.data = {};
-        $scope.onSubmit = function(form) {
-            if(form.$valid) {
-                contactDB.save($scope.data)
-                .then(function() {
-                    alert('Lưu thành công!');
-                    $scope.data = {};
-                }, function(err) {
-                    alert(err);
-                });
-            }
-        };
-    }])
     .controller('editContactCtrl', ['$scope', 'contactDB', '$stateParams', 
         function($scope, contactDB, $stateParams) {
         var id = $stateParams.id;
 
         $scope.data = {};
         $scope.onSubmit = onSubmit;
-        $scope.goBack = goBack;
         
         getContact();
 
@@ -68,10 +78,6 @@
                     alert(err);
                 });
             }
-        }
-
-        function goBack() {
-            $scope.go('contact-show', {id: id});
         }
     }]);
 })();

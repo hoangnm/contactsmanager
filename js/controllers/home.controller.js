@@ -1,25 +1,21 @@
 (function() {
   angular.module('app')
-    .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 
-      function($rootScope, $scope, contactDB) {
-      //var getDataDone = false;
-      
-      /*$scope.customers = [];
-      $rootScope.$on('searchBar:filter', function(event, data) {
-        contactDB.find(data.name, data.key)
-        .then(function(res) {
-          $scope.customers = res;
-          getDataDone = true;
-        });
-      });*/
-      /*$scope.onItemClick = function(customer) {
-        $scope.go('contact-show', {id: customer._id});
-      };
-      $scope.isEmpty = function() {
-        return getDataDone && $scope.customers.length === 0;
-      };*/
-
+    .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 'excelService',
+      function($rootScope, $scope, contactDB, excelService) {
+      var file = null;
       $scope.data = {};
+      $scope.canImport = false;
+      $scope.$on('file:upload', function(event, fileData) {
+        file = fileData;
+        if(file) $scope.canImport = true;
+      });
+      $scope.importExcel = function () {
+        if(file) {
+          var path = file.path;
+          excelService.importToDB(path);
+        }
+      };
+      
       $scope.onSubmit = function(form) {
         if(form.$valid) {
           contactDB.save($scope.data)
@@ -30,6 +26,6 @@
             alert(err);
           });
         }
-        };
+      };
     }]);
 })();

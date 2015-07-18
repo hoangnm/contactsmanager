@@ -7,6 +7,8 @@
     db.loadDatabase();
     
     function find(name, key) {
+      console.log(name);
+      console.log(key);
       var defer = $q.defer();
       var regex = new RegExp(name, 'i');
       var query = {};
