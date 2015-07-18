@@ -1,27 +1,33 @@
 (function() {
-    angular.module('app', ['ngRoute', 'file-model'])
-    .run(['$rootScope', '$location', function($rootScope, $location) {
-      $rootScope.go = function(url) {
-        $location.url(url);
+    angular.module('app', ['ui.router', 'file-model'])
+    .run(['$rootScope', '$state', function($rootScope, $state) {
+      $rootScope.go = function(state, params, options) {
+        options = options || {};
+        $state.go(state, params, options);
       };
     }])
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+        .state('home', {
+            url: '/home',
             templateUrl: './js/templates/home.html',
             controller: 'homeCtrl',
         })
-        .when('/contact/:id', {
+        .state('contact-show', {
+            url: '/contact/:id',
             templateUrl: './js/templates/contact.html',
             controller: 'contactCtrl',
         })
-        .when('/contact-new', {
+        .state('contact-new', {
+            url: '/contact-new',
             templateUrl: './js/templates/new.html',
             controller: 'newContactCtrl',
         })
-        .when('/contact-edit/:id', {
+        .state('contact-edit', {
+            url: '/contact-edit/:id',
             templateUrl: './js/templates/edit.html',
             controller: 'editContactCtrl',
         });
+         $urlRouterProvider.when('/', '/home');
     }]);
 })();

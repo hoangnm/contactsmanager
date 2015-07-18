@@ -13,7 +13,7 @@
         });
       };
       $scope.onItemClick = function(customer) {
-        $scope.go('contact/' + customer._id);
+        $scope.go('contact-show', {id: customer._id});
       };
       $scope.isEmpty = function() {
         return getDataDone && $scope.customers.length === 0;

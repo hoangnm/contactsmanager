@@ -1,8 +1,8 @@
 (function() {
     angular.module('app')
-    .controller('contactCtrl', ['$scope', 'contactDB', '$routeParams', 
-        function($scope, contactDB, $routeParams) {
-        var id = $routeParams.id;
+    .controller('contactCtrl', ['$scope', 'contactDB', '$stateParams', 
+        function($scope, contactDB, $stateParams) {
+        var id = $stateParams.id;
         
         $scope.removeCustomer = removeCustomer;
         $scope.editContact = editContact;
@@ -20,12 +20,12 @@
             contactDB.remove(id)
             .then(function(res) {
                 alert('Xóa thành công!');
-                $scope.go('/');
+                $scope.go('home');
             });
         }
         
         function editContact() {
-            $scope.go('contact-edit/' + id);
+            $scope.go('contact-edit', {id: id});
         }
     }])
     .controller('newContactCtrl', ['$scope', 'contactDB', function($scope, contactDB) {
@@ -42,9 +42,9 @@
             }
         };
     }])
-    .controller('editContactCtrl', ['$scope', 'contactDB', '$routeParams', 
-        function($scope, contactDB, $routeParams) {
-        var id = $routeParams.id;
+    .controller('editContactCtrl', ['$scope', 'contactDB', '$stateParams', 
+        function($scope, contactDB, $stateParams) {
+        var id = $stateParams.id;
 
         $scope.data = {};
         $scope.onSubmit = onSubmit;
@@ -71,7 +71,7 @@
         }
 
         function goBack() {
-            $scope.go('contact/' + id);
+            $scope.go('contact-show', {id: id});
         }
     }]);
 })();

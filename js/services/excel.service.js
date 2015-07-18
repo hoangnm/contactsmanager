@@ -6,10 +6,10 @@ angular.module('app')
   var contactsError = [];
   function saveContact(contact) {
     var item = {
-      name: contact['FULL NAME '],
-      address: contact['COUNTRY '],
-      phoneNum: contact['PHONE NUMBER '],
-      email: contact['EMAIL ADDRESS ']
+      name: contact['FULL NAME'],
+      address: contact['COUNTRY'],
+      phoneNum: contact['PHONE NUMBER'],
+      email: contact['EMAIL ADDRESS']
     };
     contactDB.save(item)
     .then(function(res) {
