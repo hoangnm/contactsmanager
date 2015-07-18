@@ -1,11 +1,17 @@
 (function() {
     angular.module('app')
     .controller('headerCtrl', ['$scope', 'excelService', function($scope, excelService) {
-      $scope.data = {};
+      var file = null;
+      $scope.canImport = false;
+      $scope.$on('file:upload', function(event, fileData) {
+        file = fileData;
+        if(file) $scope.canImport = true;
+      });
       $scope.importExcel = function () {
-        var path = $scope.data.fileModel.path;
-        excelService.importToDB(path);
-        $scope.$broadcast('file:reset');
+        if(file) {
+          var path = file.path;
+          excelService.importToDB(path);
+        }
       };
     }]);
 })();

@@ -38,6 +38,19 @@ button, .button {
   text-transform: uppercase;
 }
 
+/* file upload */
+[file-upload] {
+  display: inline-block;
+}
+
+.file-upload {
+  display: inherit;
+}
+
+.file-upload input {
+  display: none;
+}
+
 /* header */
 .header {
   height: 50px;
@@ -63,6 +76,10 @@ button, .button {
 
 .header a:hover {
   color: #fff;
+}
+
+.header button {
+  
 }
 
 /* content */

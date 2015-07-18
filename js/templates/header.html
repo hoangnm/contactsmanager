@@ -1,11 +1,11 @@
 <div class="header raised" ng-controller="headerCtrl">
-  <div class="title">
-    <span>Quản lý danh bạ</span>
+  <div class="title" ng-click="go('home')">
+    <a>Quản lý danh bạ</a>
   </div>
   <div class="menu">
+    <div file-upload></div>
+    <button ng-click="importExcel()" ng-disabled="!canImport">Import</button>
     <a class="icon ion-home" ng-click="go('home')"></a>
     <a class="icon ion-ios-plus" ng-click="go('contact-new')"></a>
-    <input type='file' file-model='data.fileModel'>
-    <button ng-click="importExcel()">Import</button>
   </div>
 </div>
