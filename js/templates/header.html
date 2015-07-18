@@ -3,9 +3,6 @@
     <a>Quản lý danh bạ</a>
   </div>
   <div class="menu">
-    <div file-upload></div>
-    <button ng-click="importExcel()" ng-disabled="!canImport">Import</button>
-    <a class="icon ion-home" ng-click="go('home')"></a>
-    <a class="icon ion-ios-plus" ng-click="go('contact-new')"></a>
+    <search-bar on-filter="filter"></search-bar>
   </div>
 </div>

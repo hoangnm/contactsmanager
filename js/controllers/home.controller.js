@@ -1,17 +1,18 @@
 (function() {
   angular.module('app')
-    .controller('homeCtrl', ['$scope', 'contactDB', 
-      function($scope, contactDB) {
+    .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 
+      function($rootScope, $scope, contactDB) {
       var getDataDone = false;
-      $scope.data = {filterKey: 'name', filterValue: null};
+      
       $scope.customers = [];
-      $scope.filter = function(name, key) {
-        contactDB.find(name, key)
+      $rootScope.$on('searchBar:filter', function(event, data) {
+        console.log(data);
+        contactDB.find(data.name, data.key)
         .then(function(res) {
           $scope.customers = res;
           getDataDone = true;
         });
-      };
+      });
       $scope.onItemClick = function(customer) {
         $scope.go('contact-show', {id: customer._id});
       };
