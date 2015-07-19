@@ -64,6 +64,11 @@ button, .button {
 .header a:hover {
   color: #fff; }
 
+.header input, select {
+  border-radius: 3px;
+  border: none;
+  padding: 10px; }
+
 /* content */
 .content {
   margin-top: 20px;
