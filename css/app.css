@@ -31,10 +31,9 @@ a, button, select {
   display: none; }
 
 .list .item {
-  height: 30px;
+  height: 100px;
   border: solid 1px;
   border-radius: 3px;
-  line-height: 30px;
   padding: 10px;
   margin-bottom: 5px; }
 
