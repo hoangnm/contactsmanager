@@ -1,6 +1,6 @@
 <div file-upload></div>
 <button ng-click="importExcel()" ng-disabled="!canImport">Import</button>
-<form novalidate name="mainForm">
+<form novalidate name="mainForm" ng-submit="onSubmit(mainForm)">
   <div ng-form name="childForm1">
     <input type="text" placeholder="Họ và tên" ng-model="data.name" required>
     <input type="text" placeholder="Địa chỉ" ng-model="data.address">
