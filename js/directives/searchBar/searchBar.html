@@ -1,6 +1,6 @@
-<div class="search-bar center">
+<form class="search-bar center" novalidation ng-submit="filter(data.filterValue, data.filterKey)">
   <input type="text" placeholder="Tìm kiếm" ng-model="data.filterValue">
-  <button ng-click="filter(data.filterValue, data.filterKey)">Tìm kiếm</button>
+  <button type="submit">Tìm kiếm</button>
   <div style="display:inline;">
     <label>Tìm theo: </label>
     <select ng-model="data.filterKey">
@@ -10,4 +10,4 @@
       <option value="email">Email</option>
     </select>
   </div>
-</div>
+</form>
