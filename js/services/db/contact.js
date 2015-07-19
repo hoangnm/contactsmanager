@@ -35,7 +35,13 @@
     
     function save(data) {
       var defer = $q.defer();
-      db.findOne({phoneNum: data.phoneNum}, function (err, doc) {
+      var query = {
+        name: data.name,
+        phoneNum: data.phoneNum,
+        address: data.address,
+        email: data.email
+      };
+      db.findOne(query, function (err, doc) {
         if(!doc) {
           db.insert(data, function (err, newDoc) {
             if(!err) {
@@ -44,7 +50,7 @@
             defer.reject(err);
           });
         } else {
-          defer.reject('Số điện thoại đã tồn tại!');
+          defer.reject('danh bạ đã tồn tại!');
         }
       });
       return defer.promise;
