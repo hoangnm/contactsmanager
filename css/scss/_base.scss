@@ -1,0 +1,19 @@
+/* base */
+body {
+  webkit-font-smoothing: antialiased;
+}
+
+a, button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.default {
+  color: rgba(0,0,0,0.87);
+  background-color: rgb(250,250,250);
+}
+.raised {
+  background-color: #106CC8;
+  color: #D9E8F1;
+}
+

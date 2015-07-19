@@ -1,0 +1,30 @@
+/* header */
+.header {
+  height: 70px;
+  line-height: 70px;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.1);
+  padding: 0 10px;
+}
+
+.header .title {
+  float: left;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.header .menu {
+  float: right;
+}
+
+.header .icon {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.header a:hover {
+  color: #fff;
+}
+
+.header button {
+  
+}
