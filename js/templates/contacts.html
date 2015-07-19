@@ -1,4 +1,6 @@
 <div ng-show="isEmpty()" class="empty-data center">Không tìm thấy.</div>
-<div ng-repeat="customer in customers" ng-click="onItemClick(customer)" class="products center">
-  {{customer.name}}
+<div class="list">
+  <div class="item" ng-repeat="customer in customers" ng-click="onItemClick(customer)" class="products center">
+    {{customer.name}}
+  </div>
 </div>

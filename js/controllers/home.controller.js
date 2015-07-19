@@ -2,14 +2,8 @@
   angular.module('app')
     .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 'excelService',
       function($rootScope, $scope, contactDB, excelService) {
-      var file = null;
       $scope.data = {};
-      $scope.canImport = false;
-      $scope.$on('file:upload', function(event, fileData) {
-        file = fileData;
-        if(file) $scope.canImport = true;
-      });
-      $scope.importExcel = function () {
+      $scope.importExcel = function (file) {
         if(file) {
           var path = file.path;
           excelService.importToDB(path);

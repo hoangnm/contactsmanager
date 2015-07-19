@@ -11,7 +11,8 @@
       var regex = new RegExp(name, 'i');
       var query = {};
       query[key] = regex;
-      db.find(query, function (err, docs) {
+      db.find(query).sort({name: 1})
+      .exec(function (err, docs) {
         if(!err) {
           defer.resolve(docs);
         }
