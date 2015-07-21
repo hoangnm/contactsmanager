@@ -88,3 +88,6 @@ button, .button {
 .content {
   margin-top: 20px;
   padding: 10px; }
+
+.new-contact input {
+  height: 30px; }

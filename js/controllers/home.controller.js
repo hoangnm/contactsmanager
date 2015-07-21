@@ -10,6 +10,9 @@
           excelService.importToDB(path);
         }
       };
+      $scope.checkContact = function(contact) {
+        
+      };
       
       function onSaveContactSuccess(contact) {
         

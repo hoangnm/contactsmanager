@@ -1,17 +1,17 @@
 <div file-upload on-import="importExcel"></div>
 <form novalidate name="mainForm" ng-submit="onSubmit(mainForm)">
-  <div ng-form name="childForm{{childForm + $index}}" class="row" ng-repeat="data in forms track by $index">
+  <div ng-form name="childForm{{childForm + $index}}" class="row new-contact" ng-repeat="data in forms track by $index">
     <div class="col">
-      <input type="text" placeholder="Họ và tên" ng-model="data.name" required>
+      <input type="text" placeholder="Họ và tên" ng-model="data.name" required ng-blur="checkContact(data)">
     </div>
     <div class="col">
-      <input type="text" placeholder="Địa chỉ" ng-model="data.address">
+      <input type="text" placeholder="Địa chỉ" ng-model="data.address" ng-blur="checkContact(data)">
     </div>
     <div class="col">
-      <input type="text" placeholder="Số điện thoại" ng-model="data.phoneNum" required>
+      <input type="text" placeholder="Số điện thoại" ng-model="data.phoneNum" required ng-blur="checkContact(data)">
     </div>
     <div class="col">
-      <input type="email" placeholder="Email" ng-model="data.email">
+      <input type="email" placeholder="Email" ng-model="data.email" ng-blur="checkContact(data)">
     </div>
   </div>
   <button type="submit">Lưu</button>

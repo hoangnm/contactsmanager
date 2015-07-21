@@ -1,7 +1,7 @@
 <div ng-show="isEmpty()" class="empty-data center">Không tìm thấy.</div>
 <div class="list">
   <div class="item" ng-repeat="customer in customers" ng-click="onItemClick(customer)" class="products center">
-    <h4>{{customer.name}}</h4>
-    <span><b>Điện thoại:</b> {{customer.phoneNum || 'Không có'}}</span>
+    <h4><i class="icon ion-person"></i> {{customer.name}}</h4>
+    <span><b><i class="icon ion-ios-telephone"></i></b> {{customer.phoneNum || 'Không có'}}</span>
   </div>
 </div>
