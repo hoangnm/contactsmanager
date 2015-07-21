@@ -52,10 +52,18 @@ button, .button {
   color: #D9E8F1; }
 
 /* grid */
-.row .col {
-  display: inline;
-  float: left;
-  width: 25%; }
+.row {
+  margin-bottom: 5px; }
+  .row:before,
+  .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+  .row .col {
+    display: inline;
+    float: left;
+    width: 25%; }
 
 /* header */
 .header {
