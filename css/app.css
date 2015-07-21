@@ -4,21 +4,13 @@ body {
 
 /* base */
 body {
-  webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased; }
 
 a {
   text-decoration: none; }
 
 a, button, select {
   cursor: pointer; }
-
-.default {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #fafafa; }
-
-.raised {
-  background-color: #106CC8;
-  color: #D9E8F1; }
 
 /* file upload */
 [file-upload] {
@@ -50,6 +42,20 @@ button, .button {
 /* utilities */
 .center {
   text-align: center; }
+
+.default {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fafafa; }
+
+.raised {
+  background-color: #106CC8;
+  color: #D9E8F1; }
+
+/* grid */
+.row .col {
+  display: inline;
+  float: left;
+  width: 25%; }
 
 /* header */
 .header {
