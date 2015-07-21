@@ -18,6 +18,7 @@
         scope.canImport = false;
         scope.importExcel = function () {
           scope.onImport()(file);
+          reset();
         };
         element.find('a').on('click', function() {
           uploadElem[0].click();
@@ -29,6 +30,11 @@
             scope.canImport = true;
           });
         });
+        function reset() {
+          scope.canImport = false;
+          file = null;
+          scope.fileName = 'Upload file excel';
+        }
       }
     };
   }]);
