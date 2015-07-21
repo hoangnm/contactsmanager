@@ -1,6 +1,6 @@
 <div file-upload on-import="importExcel"></div>
 <form novalidate name="mainForm" ng-submit="onSubmit(mainForm)">
-  <div ng-form name="childForm1" class="row">
+  <div ng-form name="childForm{{childForm + $index}}" class="row" ng-repeat="data in forms track by $index">
     <div class="col">
       <input type="text" placeholder="Họ và tên" ng-model="data.name" required>
     </div>
@@ -16,3 +16,4 @@
   </div>
   <button type="submit">Lưu</button>
 </form>
+<button ng-click="addChildForm()">Thêm dòng</button>
