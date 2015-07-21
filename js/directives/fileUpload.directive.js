@@ -6,11 +6,11 @@
       scope: {
         onImport: '&'
       },
-      template: '<div class="file-upload">' + 
-                  '<input type="file">' +
-                  '<a>{{fileName}}</a>' +
-                '</div>' + 
-                '<button ng-click="importExcel()" ng-disabled="!canImport">Import</button>',
+      template:  '<button ng-click="importExcel()" ng-disabled="!canImport">Import</button>' +
+                  '<div class="file-upload">' + 
+                    '<input type="file">' +
+                    '<a>{{fileName}}</a>' +
+                  '</div>',
       link: function(scope, element, attrs) {
         var uploadElem = element.find('input');
         var file;

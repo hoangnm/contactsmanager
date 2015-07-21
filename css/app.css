@@ -13,11 +13,8 @@ a, button, select {
   cursor: pointer; }
 
 /* file upload */
-[file-upload] {
-  display: inline-block; }
-
 .file-upload {
-  display: inherit; }
+  display: inline-block; }
 
 .file-upload input {
   display: none; }

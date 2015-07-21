@@ -1,4 +1,3 @@
-<div file-upload on-import="importExcel"></div>
 <form novalidate name="mainForm" ng-submit="onSubmit(mainForm)">
   <div ng-form name="childForm{{childForm + $index}}" class="row new-contact" ng-repeat="data in forms track by $index">
     <div class="col">
@@ -17,3 +16,4 @@
   <button type="submit">Lưu</button>
 </form>
 <button ng-click="addChildForm()">Thêm dòng</button>
+<div file-upload on-import="importExcel"></div>
