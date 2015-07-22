@@ -1,0 +1,10 @@
+/* grid */
+.row {
+  margin-bottom: 5px;
+  @include clearfix;
+  .col {
+    display: inline;
+    float: left;
+    width: 25%;
+  }
+}
