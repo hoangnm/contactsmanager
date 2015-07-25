@@ -13,18 +13,18 @@
         $scope.isEmpty = function() {
             return getDataDone && $scope.customers.length === 0;
         };
-        $scope.onPageClick = function(page) {
+        /*$scope.onPageClick = function(page) {
             getContacts(page);
-        };
+        };*/
 
-        getContacts(1);
+        getContacts();
         
-        function getContacts(page) {
-            contactDB.find(searchValue, searchKey, page)
+        function getContacts() {
+            contactDB.find(searchValue, searchKey)
             .then(function(res) {
-                console.log(res);
-                $scope.customers = res.data;
-                $scope.totalItems = res.total;
+                //console.log(res);
+                $scope.customers = res;
+                //$scope.totalItems = res.total;
                 getDataDone = true;
             });
         }
