@@ -36,9 +36,7 @@
     function save(data) {
       var defer = $q.defer();
       var query = {
-        name: data.name,
         phoneNum: data.phoneNum,
-        address: data.address,
         email: data.email
       };
       db.findOne(query, function (err, doc) {
@@ -62,7 +60,7 @@
         if(!err) {
           defer.resolve(numRemoved);
         }
-        defer.reject(err);
+        defer.resolve({error: err});
       });
       return defer.promise;
     }
@@ -73,7 +71,7 @@
         if(!err) {
           defer.resolve(numReplaced);
         }
-        defer.reject(err);
+        defer.resolve({error: err});
       });
       return defer.promise;
     }
