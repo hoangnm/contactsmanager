@@ -12,6 +12,9 @@ a {
 a, button, select {
   cursor: pointer; }
 
+input {
+  height: 30px; }
+
 /* file upload */
 .file-upload {
   display: inline-block; }
@@ -101,10 +104,10 @@ button, .button {
   border: none;
   padding: 10px; }
 
+.header input {
+  height: 20px; }
+
 /* content */
 .content {
   margin-top: 20px;
   padding: 10px; }
-
-.new-contact input {
-  height: 30px; }
