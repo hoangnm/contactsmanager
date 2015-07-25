@@ -1,12 +1,12 @@
 <form class="search-bar center" novalidation ng-submit="filter(data.filterValue, data.filterKey)">
   <input type="text" placeholder="Tìm kiếm" ng-model="data.filterValue">
-  <button type="submit">Tìm kiếm</button>
+  <button type="submit">Search</button>
   <div style="display:inline;">
-    <label>Tìm theo: </label>
+    <label>Search by: </label>
     <select ng-model="data.filterKey">
-      <option value="name">Tên</option>
-      <option value="address">Địa chỉ</option>
-      <option value="phoneNum">Số điện thoại</option>
+      <option value="name">Name</option>
+      <option value="address">Address</option>
+      <option value="phoneNum">Phone</option>
       <option value="email">Email</option>
     </select>
   </div>

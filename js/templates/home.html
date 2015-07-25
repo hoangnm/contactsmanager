@@ -1,19 +1,19 @@
 <form novalidate name="mainForm" ng-submit="onSubmit(mainForm)">
   <div ng-form name="childForm{{childForm + $index}}" class="row new-contact" ng-repeat="data in forms track by $index">
     <div class="col">
-      <input type="text" placeholder="Họ và tên" ng-model="data.name" required ng-blur="checkContact(data)">
+      <input type="text" placeholder="Name" ng-model="data.name" required ng-blur="checkContact(data)">
     </div>
     <div class="col">
-      <input type="text" placeholder="Địa chỉ" ng-model="data.address" ng-blur="checkContact(data)">
+      <input type="text" placeholder="Address" ng-model="data.address" ng-blur="checkContact(data)">
     </div>
     <div class="col">
-      <input type="text" placeholder="Số điện thoại" ng-model="data.phoneNum" required ng-blur="checkContact(data)">
+      <input type="text" placeholder="Phone" ng-model="data.phoneNum" required ng-blur="checkContact(data)">
     </div>
     <div class="col">
       <input type="email" placeholder="Email" ng-model="data.email" ng-blur="checkContact(data)">
     </div>
   </div>
-  <button type="submit">Lưu</button>
+  <button type="submit">Save</button>
 </form>
-<button ng-click="addChildForm()">Thêm dòng</button>
+<button ng-click="addChildForm()">Add more row</button>
 <div file-upload on-import="importExcel"></div>
