@@ -47,10 +47,10 @@
             if(!err) {
               defer.resolve(newDoc);
             }
-            defer.reject(err);
+            defer.resolve({error: err});
           });
         } else {
-          defer.reject('danh bạ đã tồn tại!');
+          defer.resolve({error: err});
         }
       });
       return defer.promise;
