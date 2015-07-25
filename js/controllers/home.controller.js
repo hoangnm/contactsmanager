@@ -7,35 +7,31 @@
       $scope.importExcel = function (file) {
         if(file) {
           var path = file.path;
-          excelService.importToDB(path);
+          excelService.importToDB(path)
+          .then(function(res) {
+            alert('done');
+          });
         }
       };
       $scope.checkContact = function(contact) {
         
       };
 
-      
-      function onSaveContactSuccess(contact) {
-        
-      }
-      function onSaveContactFailure(err) {
-        console.log(err);
-      }
-      function saveContact(data) {
-        var contact = data;
-        contactDB.save(contact)
-        .then(onSaveContactSuccess, onSaveContactFailure);
-      }
-
       $scope.onSubmit = function(mainForm) {
         var forms = $scope.forms;
+        var contacts = [];
         for(var i = 0; i < forms.length; i++) {
           var data = forms[i];
           var formName = 'childForm' + i;
           if(mainForm[formName].$valid) {
-            saveContact(data);
+            contacts.push(data);
           }
         }
+        contactDB.saveMultiple(contacts)
+        .then(function() {
+          alert('done');
+          $scope.forms = [{}];
+        });
       };
 
       $scope.addChildForm = function(rowsToAdd) {

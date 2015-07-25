@@ -1,7 +1,7 @@
 var XLSX = require('xlsx');
 
 angular.module('app')
-.factory('excelService', ['contactDB', function(contactDB) {
+.factory('excelService', ['contactDB', '$q', function(contactDB, $q) {
   
   var contactsError = [];
   function saveContact(contact) {
@@ -11,21 +11,23 @@ angular.module('app')
       phoneNum: contact['PHONE NUMBER'],
       email: contact['EMAIL ADDRESS']
     };
-    contactDB.save(item)
-    .then(function(res) {
-
-    }, function() {
-      contactsError.push(item);
+    return contactDB.save(item)
+    .catch(function(err) {
+      console.log(err);
     });
   }
 
   function handleContactsFromXLSX(contacts) {
+    var promises = [];
     contacts.forEach(function(contact) {
-      saveContact(contact);
+      promises.push(saveContact(contact));
     });
+    return $q.all(promises)
+    .catch(function() {});
   }
 
   function importToDB(path) {
+    var promises = [];
     var reg = /.(xlsx)|(xls)$/;
     if(!reg.test(path)) return false;
 
@@ -34,7 +36,11 @@ angular.module('app')
     sheet_name_list.forEach(function(y) { /* iterate through sheets */
       var worksheet = workbook.Sheets[y];
       var contacts = XLSX.utils.sheet_to_json(worksheet);
-      handleContactsFromXLSX(contacts);
+      promises.push(handleContactsFromXLSX(contacts));
+    });
+    return $q.all(promises)
+    .catch(function(err) {
+      console.log(err);
     });
   }
 

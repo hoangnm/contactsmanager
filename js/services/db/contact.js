@@ -77,12 +77,23 @@
       });
       return defer.promise;
     }
+
+    function saveMultiple(contacts) {
+      var promises = [];
+      for (var i in contacts) {
+        promises.push(save(contacts[i]));
+      }
+      return $q.all(promises).catch(function(err) {
+        console.log(err);
+      });
+    }
     return {
       find: find,
       findById: findById,
       save: save,
       remove: remove,
-      update: update
+      update: update,
+      saveMultiple: saveMultiple
     };
   }]);
 })();
