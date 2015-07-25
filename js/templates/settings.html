@@ -1,0 +1,10 @@
+<div>
+  <form novalidate ng-submit="onSubmit(form)" name="form">
+    <div>
+      <label>database path:</label>
+      <input type="text" ng-model="data.dbPath" name="dbPath" required>
+    </div>
+    <button type="submit">Cập nhật</button>
+  </form>
+  <button ng-click="back()">Quay lại</button>
+</div>

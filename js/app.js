@@ -1,4 +1,5 @@
 (function() {
+    
     angular.module('app', ['ui.router', 'file-model'])
     .run(['$rootScope', '$state', '$window', function($rootScope, $state, $window) {
       $rootScope.go = function(state, params, options) {
@@ -33,6 +34,11 @@
             url: '/contact-search/:key/:value',
             templateUrl: './js/templates/contacts.html',
             controller: 'contactsCtrl',
+        })
+        .state('settings', {
+            url: '/settings',
+            templateUrl: './js/templates/settings.html',
+            controller: 'settingsCtrl'
         });
          $urlRouterProvider.when('/', '/home');
     }]);

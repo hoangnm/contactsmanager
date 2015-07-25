@@ -1,9 +1,21 @@
 (function() {
   var Datastore = require('nedb');
+  var gui = require('nw.gui');
 
   angular.module('app')
-  .factory('contactDB', ['$q', function($q) {
-    var db = new Datastore('./db/contacts.db');
+  .factory('utils', [function() {
+    return {
+      getDBPath: function() {
+        return localStorage.getItem('DBPath') || gui.App.dataPath + '/db';
+      },
+      setDBPath: function(path) {
+        localStorage.setItem('DBPath', path);
+        gui.Window.get().reload();
+      }
+    };
+  }])
+  .factory('contactDB', ['$q', 'utils', function($q, utils) {
+    var db = new Datastore(utils.getDBPath() + '/contacts.db');
     db.loadDatabase();
     
     function find(name, key) {
