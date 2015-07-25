@@ -13,6 +13,7 @@
       $scope.checkContact = function(contact) {
         
       };
+
       
       function onSaveContactSuccess(contact) {
         
@@ -37,8 +38,11 @@
         }
       };
 
-      $scope.addChildForm = function() {
-        $scope.forms.push({});
+      $scope.addChildForm = function(rowsToAdd) {
+        while(rowsToAdd > 0) {
+          $scope.forms.push({});
+          rowsToAdd--;
+        }
       };
     }]);
 })();

@@ -15,5 +15,6 @@
   </div>
   <button type="submit">Save</button>
 </form>
-<button ng-click="addChildForm()">Add more row</button>
+<button ng-click="addChildForm(rowsToAdd)">Add more row</button>
+<input type="number" placeholder="rows to add" ng-model="rowsToAdd">
 <div file-upload on-import="importExcel"></div>
