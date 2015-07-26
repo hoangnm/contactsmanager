@@ -10,3 +10,22 @@
   border-radius: 3px;
   padding: 10px;
 }
+
+.edit-contact {
+  border: solid 1px;
+  border-radius: 3px;
+  padding: 10px;
+  .col {
+    margin-bottom: 10px;
+  }
+}
+
+.search-input {
+  position: relative;
+  i {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    color: rgba(0,0,0,0.87);
+  }
+}

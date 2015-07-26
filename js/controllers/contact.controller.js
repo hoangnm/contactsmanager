@@ -8,7 +8,7 @@
         $scope.customers = [];
 
         $scope.onItemClick = function(customer) {
-            $scope.go('contact-show', {id: customer._id});
+            $scope.go('contact-edit', {id: customer._id});
         };
         $scope.isEmpty = function() {
             return getDataDone && $scope.customers.length === 0;
