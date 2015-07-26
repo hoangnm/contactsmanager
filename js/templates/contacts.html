@@ -2,7 +2,7 @@
 <div class="list">
   <div class="item" ng-repeat="customer in customers track by $index" ng-click="onItemClick(customer)" class="products center">
     <h4><i class="icon ion-person"></i> {{customer.name}}</h4>
-    <span><b><i class="icon ion-ios-telephone"></i></b> {{customer.phoneNum || 'Không có'}}</span>
+    <span><b><i class="icon ion-ios-telephone"></i></b> {{customer.phoneNum}}</span>
   </div>
 </div>
 <!-- <nav pagination total-items="totalItems" items-per-page="10" on-page-click="onPageClick"></nav> -->

@@ -135,3 +135,5 @@ button, .button {
     top: -3px;
     right: 0;
     color: rgba(0, 0, 0, 0.87); }
+  .search-input input {
+    padding-right: 30px; }
