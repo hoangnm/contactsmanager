@@ -105,6 +105,9 @@ button, .button {
 .header input {
   height: 20px; }
 
+.header select {
+  width: 82px; }
+
 /* content */
 .content {
   margin-top: 20px;

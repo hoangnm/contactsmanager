@@ -1,18 +1,9 @@
 (function() {
   angular.module('app')
-    .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 'excelService',
-      function($rootScope, $scope, contactDB, excelService) {
+    .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 
+      function($rootScope, $scope, contactDB) {
       $scope.rowsToAdd = 1;
       $scope.forms = [{}];
-      $scope.importExcel = function (file) {
-        if(file) {
-          var path = file.path;
-          excelService.importToDB(path)
-          .then(function(res) {
-            alert('done');
-          });
-        }
-      };
       $scope.checkContact = function(contact) {
         
       };
