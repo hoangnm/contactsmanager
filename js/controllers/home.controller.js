@@ -2,7 +2,7 @@
   angular.module('app')
     .controller('homeCtrl', ['$rootScope','$scope', 'contactDB', 'excelService',
       function($rootScope, $scope, contactDB, excelService) {
-      //$scope.data = {};
+      $scope.rowsToAdd = 1;
       $scope.forms = [{}];
       $scope.importExcel = function (file) {
         if(file) {
@@ -27,11 +27,13 @@
             contacts.push(data);
           }
         }
-        contactDB.saveMultiple(contacts)
-        .then(function() {
-          alert('done');
-          $scope.forms = [{}];
-        });
+        if(contacts.length > 0) {
+          contactDB.saveMultiple(contacts)
+          .then(function() {
+            alert('done');
+            $scope.forms = [{}];
+          });
+        }
       };
 
       $scope.addChildForm = function(rowsToAdd) {

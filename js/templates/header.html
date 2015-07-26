@@ -1,6 +1,7 @@
-<div class="header raised" ng-controller="headerCtrl" ng-dblclick="onHeaderDblclick()">
-  <div class="title" ng-click="go('home')">
-    <a>Contacts Manager</a>
+<div class="header raised" ng-controller="headerCtrl">
+  <div class="title">
+    <a><i class="icon ion-home" ng-click="go('home')"></i></a>
+    <a><i class="icon ion-ios-gear" ng-click="go('settings')"></i></a>
   </div>
   <div class="menu">
     <search-bar on-filter="filter"></search-bar>

@@ -60,7 +60,7 @@ button, .button {
   background-color: #fafafa; }
 
 .raised {
-  background-color: #106CC8;
+  background-color: #000080;
   color: #D9E8F1; }
 
 /* grid */
@@ -85,9 +85,7 @@ button, .button {
   padding: 0 10px; }
 
 .header .title {
-  float: left;
-  font-weight: 600;
-  font-size: 25px; }
+  float: left; }
 
 .header .menu {
   float: right; }
@@ -110,4 +108,9 @@ button, .button {
 /* content */
 .content {
   margin-top: 20px;
+  padding: 10px; }
+
+.contact-card {
+  border: solid 1px;
+  border-radius: 3px;
   padding: 10px; }
