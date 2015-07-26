@@ -14,7 +14,11 @@
             <div ui-view></div>
         </div>
     </div>
-
+    <script>
+        var gui = require('nw.gui'); 
+        var win = gui.Window.get();
+        win.width = 850;
+    </script>
     <script src='./js/lib/angular.js'></script>
     <script src='./js/lib/angular-file-model.js'></script>
     <script src='./js/lib/angular-ui-router.js'></script>
